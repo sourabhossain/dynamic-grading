@@ -4,9 +4,11 @@ document.querySelector("#banglaButton").addEventListener("click", () => {
     
     if (!banglaMark) {
         alert("empty!");
+    } else if (banglaMark > 100) {
+        alert('0-100');
+    } else {
+        grade('banglaGrade', banglaMark);
     }
-
-    grade('banglaGrade', banglaMark);
 });
 
 // english result button
@@ -15,9 +17,11 @@ document.querySelector("#englishButton").addEventListener("click", () => {
 
     if (!englishMark) {
         alert("empty!");
+    } else if (englishMark > 100) {
+        alert('0-100');
+    } else {
+        grade('englishGrade', englishMark);
     }
-
-    grade('englishGrade', englishMark);
 });
 
 // ict result button
@@ -26,10 +30,29 @@ document.querySelector("#ictButton").addEventListener("click", () => {
 
     if (!ictMark) {
         alert("empty!");
+    } else if (ictMark > 100) {
+        alert('0-100');
+    } else {
+        grade('ictGrade', ictMark);
     }
-
-    grade('ictGrade', ictMark);
 });
 
 function grade(id, mark) {
+    let letter = "";
+    
+    if (mark >= 80) {
+        letter = "A+";
+    } else if (mark >= 70) {
+        letter = "A";
+    } else if (mark >= 60) {
+        letter = "A-";
+    } else if (mark >= 50) {
+        letter = "B";
+    } else if (mark >= 40) {
+        letter = "C";
+    } else if (mark >= 33) {
+        letter = "D";
+    } else {
+        letter = "F";
+    }
 }
