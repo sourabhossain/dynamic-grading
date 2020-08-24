@@ -1,17 +1,60 @@
 // bangla result button
 document.querySelector("#banglaButton").addEventListener("click", () => {
     const banglaMark = parseInt(document.querySelector("#banglaMark").value);
-    console.log(banglaMark);
+    
+    if (!banglaMark) {
+        alert("empty!");
+    } else if (banglaMark > 100) {
+        alert('0-100');
+    } else {
+        grade('banglaGrade', banglaMark);
+    }
 });
 
 // english result button
 document.querySelector("#englishButton").addEventListener("click", () => {
     const englishMark = parseInt(document.querySelector("#englishMark").value);
-    console.log(englishMark);
+
+    if (!englishMark) {
+        alert("empty!");
+    } else if (englishMark > 100) {
+        alert('0-100');
+    } else {
+        grade('englishGrade', englishMark);
+    }
 });
 
 // ict result button
 document.querySelector("#ictButton").addEventListener("click", () => {
     const ictMark = parseInt(document.querySelector("#ictMark").value);
-    console.log(ictMark);
+
+    if (!ictMark) {
+        alert("empty!");
+    } else if (ictMark > 100) {
+        alert('0-100');
+    } else {
+        grade('ictGrade', ictMark);
+    }
 });
+
+function grade(id, mark) {
+    let letter = "";
+    
+    if (mark >= 80) {
+        letter = "A+";
+    } else if (mark >= 70) {
+        letter = "A";
+    } else if (mark >= 60) {
+        letter = "A-";
+    } else if (mark >= 50) {
+        letter = "B";
+    } else if (mark >= 40) {
+        letter = "C";
+    } else if (mark >= 33) {
+        letter = "D";
+    } else {
+        letter = "F";
+    }
+
+    document.querySelector(`#${id}`).innerHTML = letter;
+}
