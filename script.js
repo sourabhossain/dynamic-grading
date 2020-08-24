@@ -6,7 +6,7 @@ document.querySelector("#banglaButton").addEventListener("click", () => {
         alert("empty!");
     }
 
-    console.log(banglaMark);
+    grade('banglaGrade', banglaMark);
 });
 
 // english result button
@@ -17,7 +17,7 @@ document.querySelector("#englishButton").addEventListener("click", () => {
         alert("empty!");
     }
 
-    console.log(englishMark);
+    grade('englishGrade', englishMark);
 });
 
 // ict result button
@@ -28,5 +28,8 @@ document.querySelector("#ictButton").addEventListener("click", () => {
         alert("empty!");
     }
 
-    console.log(ictMark);
+    grade('ictGrade', ictMark);
 });
+
+function grade(id, mark) {
+}
