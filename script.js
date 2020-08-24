@@ -8,6 +8,7 @@ document.querySelector("#banglaButton").addEventListener("click", () => {
         alert('0-100');
     } else {
         grade('banglaGrade', banglaMark);
+        totalMark();
     }
 });
 
@@ -21,6 +22,7 @@ document.querySelector("#englishButton").addEventListener("click", () => {
         alert('0-100');
     } else {
         grade('englishGrade', englishMark);
+        totalMark();
     }
 });
 
@@ -34,6 +36,7 @@ document.querySelector("#ictButton").addEventListener("click", () => {
         alert('0-100');
     } else {
         grade('ictGrade', ictMark);
+        totalMark();
     }
 });
 
@@ -57,4 +60,12 @@ function grade(id, mark) {
     }
 
     document.querySelector(`#${id}`).innerHTML = letter;
+}
+
+function totalMark() {
+    const banglaMark = parseInt(document.querySelector("#banglaMark").value);
+    const englishMark = parseInt(document.querySelector("#englishMark").value);
+    const ictMark = parseInt(document.querySelector("#ictMark").value);
+    
+    document.querySelector("#totalMark").innerHTML = (banglaMark || 0) + (englishMark || 0) + (ictMark || 0);
 }
