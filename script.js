@@ -40,6 +40,12 @@ document.querySelector("#ictButton").addEventListener("click", () => {
     }
 });
 
+// total result button
+document.querySelector("#totalbutton").addEventListener("click", () => {
+    const totalMark = parseInt(document.querySelector("#totalMark").innerHTML); 
+    console.log(totalMark);
+});
+
 function grade(id, mark) {
     let letter = "";
     
