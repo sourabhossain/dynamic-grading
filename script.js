@@ -5,5 +5,9 @@ document.querySelector("#banglaButton").addEventListener("click", () => {
 });
 
 // english result button
+document.querySelector("#englishButton").addEventListener("click", () => {
+    const englishMark = parseInt(document.querySelector("#englishMark").value);
+    console.log(englishMark);
+});
 
 // ict result button
