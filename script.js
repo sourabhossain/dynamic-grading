@@ -11,3 +11,7 @@ document.querySelector("#englishButton").addEventListener("click", () => {
 });
 
 // ict result button
+document.querySelector("#ictButton").addEventListener("click", () => {
+    const ictMark = parseInt(document.querySelector("#ictMark").value);
+    console.log(ictMark);
+});
