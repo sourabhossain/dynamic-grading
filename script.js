@@ -1,7 +1,7 @@
 // bangla result button
 document.querySelector("#banglaButton").addEventListener("click", () => {
-    const banglaMark = parseInt(document.querySelector("#banglaMark").value);
-    
+    const banglaMark = document.querySelector("#banglaMark").value;
+
     if (!banglaMark) {
         alert("empty!");
     } else if (banglaMark > 100) {
@@ -14,7 +14,7 @@ document.querySelector("#banglaButton").addEventListener("click", () => {
 
 // english result button
 document.querySelector("#englishButton").addEventListener("click", () => {
-    const englishMark = parseInt(document.querySelector("#englishMark").value);
+    const englishMark = document.querySelector("#englishMark").value;
 
     if (!englishMark) {
         alert("empty!");
@@ -28,7 +28,7 @@ document.querySelector("#englishButton").addEventListener("click", () => {
 
 // ict result button
 document.querySelector("#ictButton").addEventListener("click", () => {
-    const ictMark = parseInt(document.querySelector("#ictMark").value);
+    const ictMark = document.querySelector("#ictMark").value;
 
     if (!ictMark) {
         alert("empty!");
@@ -42,16 +42,16 @@ document.querySelector("#ictButton").addEventListener("click", () => {
 
 // total result button
 document.querySelector("#totalbutton").addEventListener("click", () => {
-    const banglaMark = parseInt(document.querySelector("#banglaMark").value);
-    const englishMark = parseInt(document.querySelector("#englishMark").value);
-    const ictMark = parseInt(document.querySelector("#ictMark").value);
+    const banglaMark = document.querySelector("#banglaMark").value;
+    const englishMark = document.querySelector("#englishMark").value;
+    const ictMark = document.querySelector("#ictMark").value;
     
     if (!banglaMark || !englishMark || !ictMark) {
         alert('empty!');
     } else if (banglaMark < 33 || englishMark < 33 || ictMark < 33) {
         document.querySelector(`#totalGrade`).innerHTML = "F";
     } else {
-        const totalMark = banglaMark + englishMark + ictMark;
+        const totalMark = parseInt(banglaMark) + parseInt(englishMark) + parseInt(ictMark);
         const avgMark = totalMark / 3; 
         grade('totalGrade', avgMark);
     }
