@@ -55,4 +55,6 @@ function grade(id, mark) {
     } else {
         letter = "F";
     }
+
+    document.querySelector(`#${id}`).innerHTML = letter;
 }
