@@ -42,8 +42,19 @@ document.querySelector("#ictButton").addEventListener("click", () => {
 
 // total result button
 document.querySelector("#totalbutton").addEventListener("click", () => {
-    const totalMark = parseInt(document.querySelector("#totalMark").innerHTML); 
-    console.log(totalMark);
+    const banglaMark = parseInt(document.querySelector("#banglaMark").value);
+    const englishMark = parseInt(document.querySelector("#englishMark").value);
+    const ictMark = parseInt(document.querySelector("#ictMark").value);
+    
+    if (!banglaMark || !englishMark || !ictMark) {
+        alert('empty!');
+    } else if (banglaMark < 33 || englishMark < 33 || ictMark < 33) {
+        document.querySelector(`#totalGrade`).innerHTML = "F";
+    } else {
+        const totalMark = banglaMark + englishMark + ictMark;
+        const avgMark = totalMark / 3; 
+        grade('totalGrade', avgMark);
+    }
 });
 
 function grade(id, mark) {
